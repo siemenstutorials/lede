@@ -7,7 +7,7 @@
 # <https://github.com/KFERMercer/OpenWrt-CI>
 #
 
-name: PSG1208斐讯K2-v1.2
+name: PSG1208斐讯K2-v1.3
 
 on:
   push:
@@ -119,7 +119,7 @@ jobs:
           EOF
 
           # IPv6支持:
-          # cat >> .config <<EOF
+          cat >> .config <<EOF
           # CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
           # CONFIG_PACKAGE_ipv6helper=y
           EOF
@@ -135,7 +135,7 @@ jobs:
           EOF
 
           # USB3.0支持:
-          # cat >> .config <<EOF
+          cat >> .config <<EOF
           # CONFIG_PACKAGE_kmod-usb-ohci=y
           # CONFIG_PACKAGE_kmod-usb-ohci-pci=y
           # CONFIG_PACKAGE_kmod-usb2=y
@@ -144,7 +144,7 @@ jobs:
           EOF
 
           # 常用LuCI插件选择:
-          # cat >> .config <<EOF
+          cat >> .config <<EOF
           # CONFIG_PACKAGE_luci-app-adbyby-plus=y
           # CONFIG_PACKAGE_luci-app-aria2=y
           # CONFIG_PACKAGE_luci-app-baidupcs-web=y
@@ -170,7 +170,7 @@ jobs:
           EOF
 
           # LuCI主题:
-          # cat >> .config <<EOF
+          cat >> .config <<EOF
           # CONFIG_PACKAGE_luci-theme-argon=y
           # CONFIG_PACKAGE_luci-theme-netgear=y
           EOF

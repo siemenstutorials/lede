@@ -7,7 +7,7 @@
 # <https://github.com/KFERMercer/OpenWrt-CI>
 #
 
-name: ASUS_RT-ACRH17-V1.1
+name: ASUS_RT-ACRH17-V1.2
 
 on:
   push:
@@ -101,10 +101,18 @@ jobs:
           # 无论你想要对固件进行怎样的定制, 都需要且只需要修改 EOF 回环内的内容.
           # 
 
-          # 编译ASUS_RT-ACRH17-V1.1固件:
+          # 编译ASUS_RT-ACRH17-V1.2固件:
           cat >> .config <<EOF
           CONFIG_TARGET_ipq40xx=y
           CONFIG_TARGET_ipq40xx_DEVICE_asus_rt-acrh17=y
+          CONFIG_HAS_DEVICES=y
+          CONFIG_TARGET_BOARD="ipq40xx"
+          CONFIG_TARGET_SUBTARGET="generic"
+          CONFIG_TARGET_PROFILE="DEVICE_asus_rt-acrh17"
+          CONFIG_TARGET_ARCH_PACKAGES="arm_cortex-a7_neon-vfpv4"
+          CONFIG_DEFAULT_TARGET_OPTIMIZATION="-Os -pipe"
+          CONFIG_CPU_TYPE="cortex-a7+neon-vfpv4"
+          CONFIG_LINUX_4_19=y
           EOF
 
           # 固件压缩:
